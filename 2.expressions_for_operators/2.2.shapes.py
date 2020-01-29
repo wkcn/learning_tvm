@@ -27,7 +27,7 @@ print(c)
 def vector_add_nd(ndim):
     A = tvm.placeholder([tvm.var() for _ in range(ndim)])
     B = tvm.placeholder(A.shape)
-    C = tvm.compute(A.shape, lambda *i: A[i] + B[i]) # *i
+    C = tvm.compute(A.shape, lambda *i: A[i] + B[i]) # *i is the index (a, b, c, d, e, ...)
     s = tvm.create_schedule(C.op)
     print(tvm.lower(s, [A, B, C], simple_mode=True))
     return tvm.build(s, [A, B, C])
