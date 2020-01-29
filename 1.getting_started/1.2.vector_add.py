@@ -20,7 +20,7 @@ s = tvm.create_schedule(C.op)
 The lower method accepts the schedule and input and output tensors.
 The simple_mode=True will print the program in a simple and compact way.
 '''
-tvm.lower(s, [A, B, C], simple_mode=True)
+print(tvm.lower(s, [A, B, C], simple_mode=True))
 
 mod = tvm.build(s, [A, B, C])
 

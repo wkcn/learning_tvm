@@ -11,10 +11,10 @@ name = 'resnet18_v1'
 graph_fn, mod_fn, params_fn = ['./'+name+ext for ext in ('.json','.tar','.params')]
 target = 'llvm'
 
-with open('./data/imagenet1k_labels.txt') as fin:
+with open('../data/imagenet1k_labels.txt') as fin:
     labels = ast.literal_eval(fin.read())
 
-image = Image.open('./data/cat.jpg').resize((224, 224))
+image = Image.open('../data/cat.jpg').resize((224, 224))
 
 def build_pretrained_model(name):
     model = getattr(mx.gluon.model_zoo.vision, name)(pretrained=True)
