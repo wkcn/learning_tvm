@@ -1,3 +1,8 @@
+'''
+Reordering the for-loops in matrix multiplication properly improves the performance.
+
+Proper thread-level parallelization also improves the performance.
+'''
 import d2ltvm
 import numpy as np
 import tvm
